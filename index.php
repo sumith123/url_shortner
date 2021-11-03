@@ -8,7 +8,7 @@ if (isset($_GET['url']) && $_GET['url'] != "") {
     if (filter_var($url, FILTER_VALIDATE_URL)) {
         $slug = $obj->GetShortUrl($url);
         $conn->close();
-?>
+        ?>
         <div style="text-align: center;">
             <?php
             echo "<b>Short URL:</b> " . $short_url . $slug;
@@ -24,8 +24,6 @@ if (isset($_GET['url']) && $_GET['url'] != "") {
     }
 }
 
-
-
 if (isset($_GET['redirect']) && $_GET['redirect'] != "") {
     $slug = urldecode($_GET['redirect']);
     $url = $obj->GetRedirectUrl($slug);
@@ -33,15 +31,6 @@ if (isset($_GET['redirect']) && $_GET['redirect'] != "") {
     header("location:" . $url);
     exit;
 }
-
-
-
-
-
-
-
-
-
 
 ?>
 <center>
